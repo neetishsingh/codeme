@@ -1,0 +1,16 @@
+
+#function definition
+def palindrome(word):
+    #reverse the word
+    rev_word = word[::-1]
+    #compare the reversed word with original word
+    if word == rev_word:
+        return "It is a palindrome"
+    else:
+        return "It is not a palindrome"
+
+#enter input
+word = input("Enter a word: ")
+
+#call the function
+print(palindrome(word))

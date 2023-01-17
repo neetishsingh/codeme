@@ -1,0 +1,9 @@
+README.md
+setup.py
+codeme/__init__.py
+codeme/__main__.py
+codeme/code.py
+codeme.egg-info/PKG-INFO
+codeme.egg-info/SOURCES.txt
+codeme.egg-info/dependency_links.txt
+codeme.egg-info/top_level.txt
