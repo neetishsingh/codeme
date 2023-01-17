@@ -36,7 +36,7 @@ def getChatGPTResponse(prom):
     url = "https://api.openai.com/v1/completions"
 
     headers = CaseInsensitiveDict()
-    headers["Authorization"] = "Bearer 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"
+    headers["Authorization"] = "Bearer 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"
     headers["Content-Type"] = "application/json"
     
     data = jsong(prom)#'{"model": "text-davinci-003","prompt": "'+str(prom)+'", "temperature": 0.7, "max_tokens": 2300}'
@@ -49,7 +49,7 @@ def getChatGPTResponse(prom):
     ah=json.loads(ab)
     #print(ab)
     #print(ah['choices'][0]['text'])
-    json_object = json.dumps(ah['choices'][0]['text'], indent=4)
+    #json_object = json.dumps(ah['choices'][0]['text'], indent=4)
     #writegg(json_object,'a.json')
     writegg(ah['choices'][0]['text'],'tempcode.py')
  
@@ -64,14 +64,16 @@ def writeu(codefilename):
     with open(codefilename) as f:
         prom = f.readlines()
     #codelength=len(prom)
-    listofcode=[]#format (code, index)    
+    listofcode=[]#format (code, index) 
+    if(len(prom)==1 and prom[0].startswith('#')):
+        listofcode.append({"code":prom[0],"index":1})   
     for i in range(len(prom)-1):
-        #print(prom[i].strip())
+        print(prom[i].strip())
         if ((prom[i].strip()!='' and prom[i].startswith('#')) and (i==len(prom) or (prom[i+1].strip()==''))):
             #print(prom[i],'<<',i)
             listofcode.append({"code":prom[i],"index":i+1})
         if(i+2==len(prom)):
-            #print('aays')
+            print('Oh! this is little tricky but for you i will do it🤩')
             if((prom[i+1].strip()!='' and prom[i+1].startswith('#'))):
                 
                 listofcode.append({"code":prom[i+1],"index":i+2})
@@ -115,7 +117,10 @@ def findnewindex(filename,text):
 #readandcode()
 if __name__ == "__main__":
     readandcode(sys.argv[1])
-    removespaces()
+    print("ah! Finally its completed.")
+    import os
+    os.remove("tempcode.py")
+    #removespaces()
     #SHello(sys.argv[1],sys.argv[2])          
 
 

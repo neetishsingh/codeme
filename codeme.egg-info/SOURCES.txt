@@ -6,4 +6,5 @@ codeme/code.py
 codeme.egg-info/PKG-INFO
 codeme.egg-info/SOURCES.txt
 codeme.egg-info/dependency_links.txt
+codeme.egg-info/requires.txt
 codeme.egg-info/top_level.txt

@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.1'
+VERSION = '0.0.8'
 DESCRIPTION = 'CodeMe - Automatic Python Coder'
 LONG_DESCRIPTION = 'A python package which automatically codes for you.'
 
@@ -21,7 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=[],
+    install_requires=['requests'],
     keywords=['python', 'pyspark','spark','ingestion','data','dataframe','analysis','schema','pandas','chatgpt','auto','bot'],
     classifiers=[
         "Development Status :: 1 - Planning",
